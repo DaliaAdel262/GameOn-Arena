@@ -1,68 +1,181 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+/** @import must precede all other statements */
+@import url('https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Russo+One&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Astnapoliz";
+  src: url("/src/assets/fonts/Astonpoliz/Astonpoliz.woff2") format("woff2");
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-display: swap;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    /* Gaming Arena Brand Colors */
+    --color-primary-purple: #7030ef;
+    --color-secondary-pink: #db1fff;
+    --color-secondary-pink-light: #e76aff;
+    --color-dark-bg: #090820;
+    --color-navbar-scroll-bg: #2c279d;
+
+    /* Typography */
+    --font-family-astnapoliz: Astnapoliz, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-family-bbh-bartle: BBH Bartle, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    /* --font-family-rajdhani: Rajdhani, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; */
+    --font-family-syncopate: Syncopate, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-family-russo: Russo One, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    /* Shadcn color defaults */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 100%;
+    --card: 251 60% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 251 60% 8%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 263 79% 56%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 293 100% 56%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 251 33% 70% / 0.3;
+    --muted-foreground: 0 0% 100% / 0.7;
+    --accent: 293 100% 56%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 0% / 0.1;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 263 79% 56%;
+    --radius: 0.5rem;
   }
-  a:hover {
-    color: #747bff;
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    /* border-color: hsl(var(--border)); */
   }
-  button {
-    background-color: #f9f9f9;
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+
+  body {
+    font-family: var(--font-family-astnapoliz);
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+
+  h1,
+  h2 {
+    font-family: var(--font-family-astnapoliz);
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-family-astnapoliz);
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
+
+@layer utilities {
+  .font-bbh-bartle {
+    font-family: var(--font-family-bbh-bartle);
+  }
+
+  .font-syncopate {
+    font-family: var(--font-family-syncopate);
+  }
+
+  .font-russo {
+    font-family: var(--font-family-russo);
+  }
+
+  .gradient-landing-bg {
+    background: linear-gradient(180deg, #7030EF 0%, #632BD5 10.44%, #5827BF 18.85%, #4F23AC 25.53%, #46209B 30.82%, #3F1D8D 35.03%, #391B80 38.49%, #331874 41.51%, #2E166A 44.41%, #291461 47.52%, #241357 51.16%, #20114E 55.65%, #1B0F44 61.3%, #160D39 68.44%, #100B2D 77.38%, #090820 88.46%);
+  }
+
+  .gradient-landing-bg-reverse {
+    background: linear-gradient(180deg, #090820 11.54%, #100B2D 22.62%, #160D39 31.56%, #1B0F44 38.7%, #20114E 44.35%, #241357 48.84%, #291461 52.48%, #2E166A 55.59%, #331874 58.49%, #391B80 61.51%, #3F1D8D 64.97%, #46209B 69.18%, #4F23AC 74.47%, #5827BF 81.15%, #632BD5 89.56%, #7030EF 100%);
+  }
+
+  .gradient-btn {
+    background: linear-gradient(270deg, #DB1FFF 0%, #7030EF 100%);
+  }
+
+  .text-shadow-vs {
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.50);
+  }
+
+  .bg-background {
+    background-color: hsl(var(--background));
+  }
+
+  .text-foreground {
+    color: hsl(var(--foreground));
+  }
+
+  .bg-dark-bg {
+    background-color: hsl(251 60% 8%);
+  }
+
+  .border-primary-purple {
+    border-color: hsl(263 79% 56%);
+  }
+
+  .bg-primary-purple {
+    background-color: hsl(263 79% 56%);
+  }
+
+  .bg-secondary-pink{
+    background-color: var(--color-secondary-pink);
+  }
+
+  .text-primary-purple{
+    color: var(--color-primary-purple);
+  }
+
+  .text-secondary-pink {
+    color: hsl(293 100% 56%);
+  }
+
+  .text-secondary-pink-light {
+    color: hsl(293 100% 72%);
+  }
+
+  .bg-navbar-scroll {
+    background-color: var(--color-navbar-scroll-bg);
+  }
+
+  .rounded-10{
+    border-radius: var(--radius);
+  }
+
+  .app-cont{
+    padding: 0 28px;
+  }
+
+  .app-cont-md{
+    padding: 0 12px;
+  }
+
+  .app-cont-lg{
+    padding: 0;
   }
 }
