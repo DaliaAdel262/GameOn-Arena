@@ -8,6 +8,7 @@ import MerchStore from './pages/MerchStore/MerchStore'
 import Cart from './pages/Cart/Cart'
 import TeamMembersPage from './pages/TeamMembersPage/TeamMembersPage'
 import MatchesPage from './pages/MatchesPage/MatchesPage'
+import 'swiper/swiper-bundle.css';
 
 function App() {
   const location = useLocation();
