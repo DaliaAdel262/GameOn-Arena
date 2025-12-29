@@ -7,7 +7,6 @@ import LivestreamPage from './pages/LivestreamPage/LivestreamPage'
 import MerchStore from './pages/MerchStore/MerchStore'
 import Cart from './pages/Cart/Cart'
 import TeamMembersPage from './pages/TeamMembersPage/TeamMembersPage'
-import 'swiper/css';
 import MatchesPage from './pages/MatchesPage/MatchesPage'
 
 function App() {
