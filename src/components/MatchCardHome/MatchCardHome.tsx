@@ -1,4 +1,3 @@
-import React from "react";
 import { type MatchOpponents } from "../../types/MatchOpponents";
 import MatchOpp from "../../assets/images/Home/Team/match-image.png"
 

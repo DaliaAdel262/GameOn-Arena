@@ -1,4 +1,3 @@
-import React from "react";
 import MatchOpp from "../../assets/images/Matches/MatchOpponents.png";
 
 export default function MatchCard() {

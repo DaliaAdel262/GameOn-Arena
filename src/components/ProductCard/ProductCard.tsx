@@ -1,4 +1,3 @@
-import React from "react";
 import StarIcon from "../../assets/icons/stars/StarIcon";
 import { type Product } from "../../types/Product";
 import { Trash } from "lucide-react";

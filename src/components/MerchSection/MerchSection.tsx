@@ -1,4 +1,3 @@
-import StarIcon from "../../assets/icons/stars/StarIcon";
 import ProductCard from "../ProductCard/ProductCard";
 import { products } from "../../data/products";
 import { Swiper, SwiperSlide } from "swiper/react";

@@ -12,7 +12,6 @@ interface LivestreamWidgetProps {
 }
 
 export default function LivestreamWidget({
-  eventName = "Game Arena Stream",
   roomID = "public-live-room",
   userName,
   isHost = false,
