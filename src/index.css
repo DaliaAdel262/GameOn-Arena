@@ -95,6 +95,11 @@
 }
 
 @layer utilities {
+  .role-label-style{
+    background-color: rgba(160,117,244,0.30);
+    color: #E76AFF;
+  }
+
   .font-bbh-bartle {
     font-family: var(--font-family-bbh-bartle);
   }
@@ -139,15 +144,23 @@
     border-color: hsl(263 79% 56%);
   }
 
+  .border-r-secondary-pink {
+    border-right-color: var(--color-secondary-pink);
+  }
+
+  .border-l-secondary-pink {
+    border-left-color: var(--color-secondary-pink);
+  }
+
   .bg-primary-purple {
     background-color: hsl(263 79% 56%);
   }
 
-  .bg-secondary-pink{
+  .bg-secondary-pink {
     background-color: var(--color-secondary-pink);
   }
 
-  .text-primary-purple{
+  .text-primary-purple {
     color: var(--color-primary-purple);
   }
 
@@ -163,19 +176,23 @@
     background-color: var(--color-navbar-scroll-bg);
   }
 
-  .rounded-10{
+  .rounded-10 {
     border-radius: var(--radius);
   }
 
-  .app-cont{
+  .app-cont {
     padding: 0 28px;
   }
 
-  .app-cont-md{
-    padding: 0 12px;
+  @media (min-width: 768px) {
+    .app-cont {
+      padding: 0 12px;
+    }
   }
 
-  .app-cont-lg{
-    padding: 0;
+  @media (min-width: 1024px) {
+    .app-cont {
+      padding: 0;
+    }
   }
 }

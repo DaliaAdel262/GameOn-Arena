@@ -1,45 +1,15 @@
 import StarIcon from "../../assets/icons/stars/StarIcon";
-import ProductCard, { type ProductCardProps } from "../ProductCard/ProductCard";
-
-export const products: ProductCardProps[] = [
-  {
-    image: "https://api.builder.io/api/v1/image/assets/TEMP/54d91f8dae1d67bf5527f8d074e367c2af1a3d86?width=490",
-    category: "Jersey",
-    title: "Game Arena T-Shirt",
-    rating: 4,
-    price: 20
-  },
-  {
-    image: "https://api.builder.io/api/v1/image/assets/TEMP/54d91f8dae1d67bf5527f8d074e367c2af1a3d86?width=490",
-    category: "Jersey",
-    title: "Game Arena T-Shirt",
-    rating: 4,
-    price: 20
-  },
-  {
-    image: "https://api.builder.io/api/v1/image/assets/TEMP/54d91f8dae1d67bf5527f8d074e367c2af1a3d86?width=490",
-    category: "Jersey",
-    title: "Game Arena T-Shirt",
-    rating: 4,
-    price: 20
-  },
-  {
-    image: "https://api.builder.io/api/v1/image/assets/TEMP/54d91f8dae1d67bf5527f8d074e367c2af1a3d86?width=490",
-    category: "Jersey",
-    title: "Game Arena T-Shirt",
-    rating: 4,
-    price: 20
-  }
-];
+import ProductCard from "../ProductCard/ProductCard";
+import { products } from "../../data/products";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function MerchSection() {
-
   return (
-    <section className="w-full px-4 md:px-[170px] py-[60px] flex flex-col items-center justify-center gap-[60px] bg-dark-bg">
+    <section className="w-full px-4 md:px-[100px] py-[60px] flex flex-col items-center justify-center gap-[60px] bg-dark-bg">
       {/* Section Header */}
       <div className="flex flex-col items-center gap-2.5 w-full max-w-[520px]">
         <h2 className="text-white text-center font-rajdhani text-4xl leading-[48px]">
-          Shop Our Merchandise
+          GET COOL MERCH
         </h2>
         <p className="text-white text-center font-rajdhani text-lg leading-7">
           Get the latest Game Arena gear!
@@ -48,11 +18,29 @@ export default function MerchSection() {
 
       {/* Products Grid */}
       <div className="w-full flex flex-col gap-2.5">
-        <div className="flex flex-col md:flex-row flex-wrap items-stretch gap-10 w-full justify-center">
+        {/* Products */}
+        <Swiper
+          spaceBetween={40}
+          slidesPerView={1}
+          breakpoints={{
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+            1400: {
+              slidesPerView: 4,
+            }
+          }}
+          className="w-full"
+        >
           {products.map((product, index) => (
-            <ProductCard key={index} {...product} />
+            <SwiperSlide key={index}>
+              <ProductCard {...product} flexDirection="col" />
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
 
         {/* View More */}
         <div className="flex justify-end h-7">
@@ -61,9 +49,6 @@ export default function MerchSection() {
           </p>
         </div>
       </div>
-
-      {/* Bottom Divider */}
-      <div className="w-full h-px bg-black/10" />
     </section>
   );
 }
